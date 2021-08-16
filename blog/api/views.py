@@ -10,7 +10,9 @@ def get_data(request):
         url = 'https://api.hatchways.io/assessment/blog/posts?tag=%s' % tag
         response = requests.get(url)
         data = response.json()
+        # print(data)
         blogs = data['posts']
+        
 
         for i in blogs:
             blog_data = Post(
